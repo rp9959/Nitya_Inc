@@ -23,32 +23,12 @@ public class Question2 {
         this.directory = directory;
         this.groupData  = new TreeMap<>();
         this.maxLineLength = 15;
-        
-       
+   
     }
  
-   
     
-    private void printData(){
-        System.out.print("MONTH");
-        for(int j=0;j<maxLineLength-"count".length();j++) System.out.print(' ');
-        System.out.println("FILE COUNT");
-        System.out.println();
-        for(int i = 1;i<=13;i++){
-            if(groupData.containsKey(i)){
-            	String month=Month.of(i).name();
-            	System.out.print(month);
-            	
-            	for(int j=0;j<maxLineLength-month.length();j++) System.out.print(' ');
-            	
-            	System.out.println(groupData.get(i));
-                
-            }
-        }
-    }
-    
-    
-    private void loadData() throws IOException {
+    private void monthOfFiles() throws IOException {
+    	
         for(File file : directory.listFiles()){
             if(file!=null && file.isFile()){
 
@@ -62,6 +42,22 @@ public class Question2 {
                     groupData.put(month,groupData.getOrDefault(month,0)+1);
             }
         }
+        
+        
+        System.out.print("MONTH");
+        for(int j=0;j<maxLineLength-"count".length();j++) System.out.print(' ');
+        System.out.println("FILE COUNT");
+        System.out.println();
+        
+        for(int i = 1;i<=13;i++){
+            if(groupData.containsKey(i)){
+            	String month=Month.of(i).name();
+            	System.out.print(month);
+            	
+            	for(int j=0;j<maxLineLength-month.length();j++) System.out.print(' ');
+            	
+            	System.out.println(groupData.get(i));}}
+            	
     }
  
     public static void main(String[] args){
@@ -72,9 +68,9 @@ public class Question2 {
         Question2 question2 = new Question2(directory);
     
         try {
-            question2.loadData();
-            question2.printData();
-        } catch (Exception e) 
+            question2.monthOfFiles() ;
+ 
+        } catch (IOException e) 
         {
         	   e.printStackTrace();
         }
