@@ -1,0 +1,24 @@
+2.1) Write the example output of the above program first.
+
+
+This program will count the number of files inside a folder (only files but not folders inside the folder)
+If we need to count folders remove " && file.isFile() " in the Line 53 of Question2 code
+You must paste the link of directory in the terminal then The output will be as follows
+
+
+MONTH          COUNT
+
+JANUARY        6
+FEBRUARY       13
+MARCH          8
+APRIL          11
+MAY            9
+JUNE           2
+JULY           3
+AUGUST         11
+SEPTEMBER      18
+OCTOBER        13
+NOVEMBER       8
+DECEMBER       6
+
+ 
