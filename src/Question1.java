@@ -42,6 +42,7 @@ public class Question1 {
     Class1 a = new Class1(new Class2(23));
       Class3 b = new Class3(new Class4(43));
         a.b.c = b.c.a;
+        System.out.println("The statement is succesfully used");
         
     }
 }
